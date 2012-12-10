@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/tobymao/Go/src/userdb/server'
+let g:netrw_dirhist_2='/Users/tobymao/Go/src/transactionprocessor'
+let g:netrw_dirhist_3='/Users/tobymao/Go/src/marketconquest/transactionprocessor'
+let g:netrw_dirhist_4='/Users/tobymao/Go/src/marketconquest/zoo'
+let g:netrw_dirhist_5='/Users/tobymao/Go/src/marketconquest'
