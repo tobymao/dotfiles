@@ -4,6 +4,9 @@ set number
 syntax on
 ""Indenting
 set smartindent
+set expandtab
+set shiftwidth=2
+set softtabstop=2
 
 ""Show commands in command line
 set showcmd
