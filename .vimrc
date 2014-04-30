@@ -17,6 +17,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
+Plugin 'marijnh/tern_for_vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
