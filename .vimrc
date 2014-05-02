@@ -17,6 +17,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
+" You need to create a diversion sudo dpkg-divert --local --divert /usr/bin/node --rename --add /usr/bin/nodejs
 Plugin 'marijnh/tern_for_vim'
 
 " All of your Plugins must be added before the following line
