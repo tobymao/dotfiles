@@ -52,3 +52,8 @@ set showcmd
 noremap <F1> :NERDTreeToggle<CR>
 ""Set YcmCompleter Mapping
 nnoremap <F7> :YcmCompleter GoTo<CR>
+
+"" Set copy and paste
+vmap <C-j> y:call system("pbcopy", getreg("\""))<CR>
+nmap <C-k> :call setreg("\"",system("pbpaste"))<CR>p
+
