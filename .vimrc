@@ -15,6 +15,7 @@ Plugin 'gmarik/Vundle.vim'
 " plugin on GitHub repo
 Plugin 'scrooloose/nerdtree'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'pangloss/vim-javascript'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
 " You need to create a diversion sudo dpkg-divert --local --divert /usr/bin/node --rename --add /usr/bin/nodejs
@@ -44,6 +45,8 @@ set smartindent
 set expandtab
 set shiftwidth=2
 set softtabstop=2
+
+let javascript_enable_domhtmlcss=1
 
 ""Show commands in command line
 set showcmd
