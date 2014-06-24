@@ -44,7 +44,12 @@ syntax on
 set smartindent
 set expandtab
 set shiftwidth=2
-set softtabstop=2
+set tabstop=2
+set hlsearch
+highlight Search ctermbg=red ctermfg=yellow 
+
+autocmd BufRead,BufNewFile  *.py set shiftwidth=4
+autocmd BufRead,BufNewFile  *.py set tabstop=4
 
 let javascript_enable_domhtmlcss=1
 
