@@ -1,0 +1,10 @@
+[push]
+	default = simple
+[difftool]
+	prompt = false
+[alias]
+	d = difftool
+[diff]
+	tool = vimdiff
+[user]
+	email = toby.mao@gmail.com
