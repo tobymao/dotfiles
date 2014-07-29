@@ -1,0 +1,7 @@
+selectp -t 0              
+splitw -h 
+splitw -h 
+splitw -h 
+selectp -t 0 
+select-layout main-vertical
+resize-pane -t 1 -x 80
