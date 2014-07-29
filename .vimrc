@@ -41,14 +41,19 @@ filetype plugin indent on    " required
 set number
 ""Syntax
 syntax on
+""Highlighting
+set hlsearch
+highlight Search ctermbg=red ctermfg=yellow 
 ""Indenting
 set smartindent
 set expandtab
+
 set shiftwidth=2
 set tabstop=2
-set hlsearch
-highlight Search ctermbg=red ctermfg=yellow 
 
+"" For golang, use tabs
+autocmd BufRead,BufNewFile  *.go set noexpandtab
+"" For python, use 4 spaces
 autocmd BufRead,BufNewFile  *.py set shiftwidth=4
 autocmd BufRead,BufNewFile  *.py set tabstop=4
 
