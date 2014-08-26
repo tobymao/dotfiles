@@ -22,6 +22,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
 " You need to create a diversion sudo dpkg-divert --local --divert /usr/bin/node --rename --add /usr/bin/nodejs
 Plugin 'marijnh/tern_for_vim'
+Plugin 'tomasr/molokai'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -72,3 +73,4 @@ nnoremap <F7> :YcmCompleter GoTo<CR>
 vmap <C-j> y:call system("pbcopy", getreg("\""))<CR>
 nmap <C-k> :call setreg("\"",system("pbpaste"))<CR>p
 
+colorscheme molokai
