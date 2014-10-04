@@ -1,3 +1,5 @@
+[core]
+  editor = /Applications/MacVim.app/Contents/MacOS/Vim
 [push]
 	default = simple
 [difftool]
@@ -5,10 +7,14 @@
 [alias]
 	d = difftool
 [diff]
-	tool = vimdiff
+	tool = gvimdiff 
 [merge]
-	tool = vimdiff
+	tool = gvimdiff
 [mergetool]
   keepBackup = false
 [user]
 	email = toby.mao@gmail.com
+[difftool "gvimdiff"]
+	path = /Applications/MacVim.app/Contents/MacOS/Vim
+[mergetool "gvimdiff"]
+	path = /Applications/MacVim.app/Contents/MacOS/Vim
