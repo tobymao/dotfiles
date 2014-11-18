@@ -15,6 +15,7 @@ Plugin 'gmarik/Vundle.vim'
 " plugin on GitHub repo
 Plugin 'scrooloose/nerdtree'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-ruby/vim-ruby'
 Plugin 'fatih/vim-go'
 Plugin 'pangloss/vim-javascript'
 Plugin 'groenewege/vim-less'
