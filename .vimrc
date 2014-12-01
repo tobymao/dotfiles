@@ -60,6 +60,9 @@ autocmd BufRead,BufNewFile  *.go set noexpandtab
 autocmd BufRead,BufNewFile  *.py set shiftwidth=4
 autocmd BufRead,BufNewFile  *.py set tabstop=4
 
+"" Remove Trailing Whitespace on save
+autocmd BufWritePre * :%s/\s\+$//e
+
 let javascript_enable_domhtmlcss=1
 
 ""Show commands in command line
