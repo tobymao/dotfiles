@@ -46,7 +46,7 @@ set number
 syntax on
 ""Highlighting
 set hlsearch
-highlight Search ctermbg=red ctermfg=yellow 
+highlight Search ctermbg=red ctermfg=yellow
 ""Indenting
 set smartindent
 set expandtab
@@ -57,12 +57,13 @@ set tabstop=2
 "" For golang, use tabs
 autocmd BufRead,BufNewFile  *.go set noexpandtab
 "" For python, use 4 spaces
-autocmd BufRead,BufNewFile  *.py set shiftwidth=4
-autocmd BufRead,BufNewFile  *.py set tabstop=4
+""autocmd BufRead,BufNewFile  *.py set shiftwidth=4
+""autocmd BufRead,BufNewFile  *.py set tabstop=4
 
 "" Remove Trailing Whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
 
+"" For pangloss/vim-javascript
 let javascript_enable_domhtmlcss=1
 
 ""Show commands in command line
@@ -78,3 +79,6 @@ vmap <C-j> y:call system("pbcopy", getreg("\""))<CR>
 nmap <C-k> :call setreg("\"",system("pbpaste"))<CR>p
 
 colorscheme molokai
+
+"" allows do/end % for ruby
+runtime macros/matchit.vim
