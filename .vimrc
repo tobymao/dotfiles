@@ -64,7 +64,12 @@ autocmd BufRead,BufNewFile  *.go set noexpandtab
 autocmd BufWritePre * :%s/\s\+$//e
 
 "" For pangloss/vim-javascript
-let javascript_enable_domhtmlcss=1
+autocmd Bufread,BufNewFile *.js,*.jsx let javascript_enable_domhtmlcss=1
+
+"" For vim-ruby
+autocmd BufRead,BufNewFile *.rb,*.erb let g:rubycomplete_buffer_loading = 1
+autocmd BufRead,BufNewFile *.rb,*.erb let g:rubycomplete_classes_in_global = 1
+""autocmd BufRead,BufNewFile *.rb,*.erb let g:rubycomplete_rails = 1
 
 ""Show commands in command line
 set showcmd
