@@ -49,7 +49,7 @@ autocmd Bufread,BufNewFile *.js,*.jsx let javascript_enable_domhtmlcss=1
 "" For vim-ruby
 autocmd BufRead,BufNewFile *.rb,*.erb let g:rubycomplete_buffer_loading = 1
 autocmd BufRead,BufNewFile *.rb,*.erb let g:rubycomplete_classes_in_global = 1
-""autocmd BufRead,BufNewFile *.rb,*.erb let g:rubycomplete_rails = 1
+autocmd BufRead,BufNewFile *.rb,*.erb let g:rubycomplete_rails = 1
 
 ""Show commands in command line
 set showcmd
@@ -63,8 +63,7 @@ noremap <F1> :NERDTreeToggle<CR>
 nnoremap <F7> :YcmCompleter GoTo<CR>
 
 "" Set copy and paste
-vmap <C-j> y:call system("pbcopy", getreg("\""))<CR>
-nmap <C-k> :call setreg("\"",system("pbpaste"))<CR>p
+set clipboard=unnamed
 
 colorscheme molokai
 
