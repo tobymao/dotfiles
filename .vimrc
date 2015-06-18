@@ -60,6 +60,8 @@ set showcmd
 "" Show path
 set statusline+=%F
 set laststatus=2
+"" ctags path
+set tags=./.tags;
 
 ""Set Nerd Tree Toggle Mapping
 noremap <F1> :NERDTreeToggle<CR>
