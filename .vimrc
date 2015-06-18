@@ -50,6 +50,10 @@ autocmd Bufread,BufNewFile *.js,*.jsx let javascript_enable_domhtmlcss=1
 autocmd BufRead,BufNewFile *.rb,*.erb let g:rubycomplete_buffer_loading = 1
 autocmd BufRead,BufNewFile *.rb,*.erb let g:rubycomplete_classes_in_global = 1
 autocmd BufRead,BufNewFile *.rb,*.erb let g:rubycomplete_rails = 1
+autocmd BufRead,BufNewFile *.html.erb set filetype=eruby.html
+autocmd BufRead,BufNewFile *.js.erb set filetype=eruby.javascript
+autocmd BufRead,BufNewFile *.css.erb set filetype=eruby.css
+autocmd BufRead,BufNewFile *.scss.erb set filetype=eruby.scss
 
 ""Show commands in command line
 set showcmd
