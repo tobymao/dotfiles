@@ -14,6 +14,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'groenewege/vim-less'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
+Plugin 'jimenezrick/vimerl'
 " You need to create a diversion sudo dpkg-divert --local --divert /usr/bin/node --rename --add /usr/bin/nodejs
 Plugin 'marijnh/tern_for_vim'
 Plugin 'tomasr/molokai'
