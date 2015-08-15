@@ -46,6 +46,8 @@ autocmd BufWritePre * :%s/\s\+$//e
 "" For pangloss/vim-javascript
 autocmd Bufread,BufNewFile *.js,*.jsx let javascript_enable_domhtmlcss=1
 
+autocmd Bufread,BufNewFile *.q set filetype=sql
+
 "" For vim-ruby
 autocmd BufRead,BufNewFile *.rb,*.erb let g:rubycomplete_buffer_loading = 1
 autocmd BufRead,BufNewFile *.rb,*.erb let g:rubycomplete_classes_in_global = 1
@@ -73,7 +75,8 @@ noremap <F2> :CtrlPTag<CR>
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-  let g:ackprg = 'ag --vimgrep'
+  let g:ackprg = 'ag --nogroup --nocolor --column'
+  cnoreabbrev <expr> Ag ((getcmdtype() is# ':' && getcmdline() is# 'Ag')?('Ack'):('Ag'))
 endif
 
 "" Set copy and paste
