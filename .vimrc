@@ -57,6 +57,7 @@ autocmd BufRead,BufNewFile *.html.erb set filetype=eruby.html
 autocmd BufRead,BufNewFile *.js.erb set filetype=eruby.javascript
 autocmd BufRead,BufNewFile *.css.erb set filetype=eruby.css
 autocmd BufRead,BufNewFile *.scss.erb set filetype=eruby.scss
+let g:ycm_collect_identifiers_from_tags_files = 1
 
 ""Show commands in command line
 set showcmd
