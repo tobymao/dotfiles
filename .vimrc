@@ -59,6 +59,7 @@ autocmd BufRead,BufNewFile *.css.erb set filetype=eruby.css
 autocmd BufRead,BufNewFile *.scss.erb set filetype=eruby.scss
 let g:ycm_collect_identifiers_from_tags_files = 1
 
+set cursorline
 ""Show commands in command line
 set showcmd
 "" Show path
