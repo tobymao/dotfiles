@@ -35,29 +35,31 @@ set expandtab
 set shiftwidth=2
 set tabstop=2
 
-"" For golang, use tabs
-autocmd BufRead,BufNewFile  *.go set noexpandtab
-"" For python, use 4 spaces
-""autocmd BufRead,BufNewFile  *.py set shiftwidth=4
-""autocmd BufRead,BufNewFile  *.py set tabstop=4
-
 "" Remove Trailing Whitespace on save
-autocmd BufWritePre * :%s/\s\+$//e
+augroup Whitespace
+  autocmd!
+  autocmd BufWritePre * :%s/\s\+$//e
+augroup END
 
-"" For pangloss/vim-javascript
-autocmd Bufread,BufNewFile *.js,*.jsx let javascript_enable_domhtmlcss=1
+augroup FileTypeSettings
+  autocmd!
+  "" For go, use tabs
+  autocmd BufRead,BufNewFile  *.go set noexpandtab
+  "" For python, use 4 spaces
+  autocmd BufRead,BufNewFile  *.py set sw=4 cs=4
+  "" For pangloss/vim-javascript
+  autocmd Bufread,BufNewFile *.js,*.jsx let javascript_enable_domhtmlcss=1
+  autocmd Bufread,BufNewFile *.q set filetype=sql
+  "" For vim-ruby
+  autocmd BufRead,BufNewFile *.html.erb set filetype=eruby.html
+  autocmd BufRead,BufNewFile *.js.erb set filetype=eruby.javascript
+  autocmd BufRead,BufNewFile *.css.erb set filetype=eruby.css
+  autocmd BufRead,BufNewFile *.scss.erb set filetype=eruby.scss
+augroup END
 
-autocmd Bufread,BufNewFile *.q set filetype=sql
-
-"" For vim-ruby
-autocmd BufRead,BufNewFile *.rb,*.erb let g:rubycomplete_buffer_loading = 1
-autocmd BufRead,BufNewFile *.rb,*.erb let g:rubycomplete_classes_in_global = 1
-autocmd BufRead,BufNewFile *.rb,*.erb let g:rubycomplete_rails = 1
-autocmd BufRead,BufNewFile *.html.erb set filetype=eruby.html
-autocmd BufRead,BufNewFile *.js.erb set filetype=eruby.javascript
-autocmd BufRead,BufNewFile *.css.erb set filetype=eruby.css
-autocmd BufRead,BufNewFile *.scss.erb set filetype=eruby.scss
 let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
 
 set cursorline
 ""Show commands in command line
