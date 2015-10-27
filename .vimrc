@@ -1,26 +1,27 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'fatih/vim-go'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'pangloss/vim-javascript'
-Plugin 'groenewege/vim-less'
-Plugin 'kien/ctrlp.vim'
-Plugin 'mileszs/ack.vim'
-Plugin 'jimenezrick/vimerl'
-" You need to create a diversion sudo dpkg-divert --local --divert /usr/bin/node --rename --add /usr/bin/nodejs
-Plugin 'marijnh/tern_for_vim'
-Plugin 'tomasr/molokai'
+call plug#begin('~/.vim/plugged')
 
-call vundle#end()            " required
-filetype plugin indent on    " required
+Plug 'scrooloose/nerdtree'
+Plug 'Valloric/YouCompleteMe'
+Plug 'vim-ruby/vim-ruby'
+Plug 'fatih/vim-go'
+Plug 'derekwyatt/vim-scala'
+Plug 'pangloss/vim-javascript'
+Plug 'groenewege/vim-less'
+""Plug 'kien/ctrlp.vim'
+Plug 'mileszs/ack.vim'
+Plug 'jimenezrick/vimerl'
+" You need to create a diversion sudo dpkg-divert --local --divert /usr/bin/node --rename --add /usr/bin/nodejs
+Plug 'marijnh/tern_for_vim'
+Plug 'tomasr/molokai'
+
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' } | Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf.vim'
+
+call plug#end()            " required
+filetype plugin indent on  " required
 
 ""Line numbers
 set number
@@ -75,7 +76,8 @@ noremap <F1> :NERDTreeToggle<CR>
 ""Set YcmCompleter Mapping
 nnoremap <F7> :YcmCompleter GoTo<CR>
 
-noremap <F2> :CtrlPTag<CR>
+nnoremap <C-y> :Tags<CR>
+nnoremap <C-p> :FZF<CR>
 
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
@@ -87,7 +89,7 @@ endif
 "" Set copy and paste
 set clipboard=unnamed
 
-colorscheme molokai
+silent! colorscheme molokai
 
 "" allows do/end % for ruby
 runtime macros/matchit.vim
