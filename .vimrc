@@ -10,8 +10,6 @@ Plug 'fatih/vim-go'
 Plug 'derekwyatt/vim-scala'
 Plug 'pangloss/vim-javascript'
 Plug 'groenewege/vim-less'
-""Plug 'kien/ctrlp.vim'
-Plug 'mileszs/ack.vim'
 Plug 'jimenezrick/vimerl'
 " You need to create a diversion sudo dpkg-divert --local --divert /usr/bin/node --rename --add /usr/bin/nodejs
 Plug 'marijnh/tern_for_vim'
@@ -76,15 +74,8 @@ noremap <F1> :NERDTreeToggle<CR>
 ""Set YcmCompleter Mapping
 nnoremap <F7> :YcmCompleter GoTo<CR>
 
-nnoremap <C-y> :Tags<CR>
+nnoremap <C-y> :BTags<CR>
 nnoremap <C-p> :FZF<CR>
-
-if executable('ag')
-  set grepprg=ag\ --nogroup\ --nocolor
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-  let g:ackprg = 'ag --nogroup --nocolor --column'
-  cnoreabbrev <expr> Ag ((getcmdtype() is# ':' && getcmdline() is# 'Ag')?('Ack'):('Ag'))
-endif
 
 "" Set copy and paste
 set clipboard=unnamed
