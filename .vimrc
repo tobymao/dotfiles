@@ -75,7 +75,7 @@ noremap <F1> :NERDTreeToggle<CR>
 nnoremap <F7> :YcmCompleter GoTo<CR>
 
 nnoremap <C-y> :BTags<CR>
-nnoremap <C-p> :FZF<CR>
+nnoremap <C-p> :FZF -m<CR>
 
 "" Set copy and paste
 set clipboard=unnamed
