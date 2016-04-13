@@ -1,4 +1,3 @@
-set nocompatible              " be iMproved, required
 filetype off                  " required
 
 call plug#begin('~/.vim/plugged')
@@ -9,10 +8,9 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'fatih/vim-go'
 Plug 'derekwyatt/vim-scala'
 Plug 'pangloss/vim-javascript'
-Plug 'groenewege/vim-less'
-Plug 'jimenezrick/vimerl'
-" You need to create a diversion sudo dpkg-divert --local --divert /usr/bin/node --rename --add /usr/bin/nodejs
-Plug 'marijnh/tern_for_vim'
+Plug 'cakebaker/scss-syntax.vim'
+""You need to create a diversion sudo dpkg-divert --local --divert /usr/bin/node --rename --add /usr/bin/nodejs
+""Plug 'marijnh/tern_for_vim'
 Plug 'tomasr/molokai'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' } | Plug 'junegunn/fzf.vim'
@@ -29,7 +27,6 @@ syntax on
 set hlsearch
 highlight Search ctermbg=red ctermfg=yellow
 ""Indenting
-set smartindent
 set expandtab
 set shiftwidth=2
 set tabstop=2
@@ -59,8 +56,10 @@ augroup END
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
+let ruby_no_expensive = 1
 
-set cursorline
+""Shows current line, forces a redraw, causes .rb to be slow
+""set cursorline
 ""Show commands in command line
 set showcmd
 "" Show path
