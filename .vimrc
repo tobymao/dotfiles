@@ -73,7 +73,7 @@ noremap <F1> :NERDTreeToggle<CR>
 ""Set YcmCompleter Mapping
 nnoremap <F7> :YcmCompleter GoTo<CR>
 
-nnoremap <C-k> :Tags<CR>
+nnoremap <C-q> :Tags<CR>
 nnoremap <C-p> :FZF -m<CR>
 
 "" Set copy and paste
