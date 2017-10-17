@@ -12,6 +12,7 @@ Plug 'cakebaker/scss-syntax.vim'
 ""You need to create a diversion sudo dpkg-divert --local --divert /usr/bin/node --rename --add /usr/bin/nodejs
 ""Plug 'marijnh/tern_for_vim'
 Plug 'tomasr/molokai'
+Plug 'Chiel92/vim-autoformat'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' } | Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf.vim'
@@ -72,6 +73,10 @@ set tags=./.tags;
 noremap <F1> :NERDTreeToggle<CR>
 ""Set YcmCompleter Mapping
 nnoremap <F7> :YcmCompleter GoTo<CR>
+
+noremap <F5> :Autoformat<CR>
+let g:formatdef_scalafmt = "'scalafmt --stdin'"
+let g:formatters_scala = ['scalafmt']
 
 nnoremap <C-q> :Tags<CR>
 nnoremap <C-p> :FZF -m<CR>
