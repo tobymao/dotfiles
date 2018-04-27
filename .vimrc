@@ -32,6 +32,9 @@ set expandtab
 set shiftwidth=2
 set tabstop=2
 
+set ignorecase
+set smartcase
+
 "" Remove Trailing Whitespace on save
 augroup Whitespace
   autocmd!
@@ -41,9 +44,9 @@ augroup END
 augroup FileTypeSettings
   autocmd!
   "" For go, use tabs
-  autocmd BufRead,BufNewFile  *.go set noexpandtab
+  autocmd BufRead,BufNewFile *.go set noexpandtab
   "" For python, use 4 spaces
-  autocmd BufRead,BufNewFile  *.py set sw=4 cs=4
+  autocmd BufRead,BufNewFile *.py set sw=4 cs=4
   "" For pangloss/vim-javascript
   autocmd Bufread,BufNewFile *.js,*.jsx let javascript_enable_domhtmlcss=1
   autocmd Bufread,BufNewFile *.q set filetype=sql
@@ -52,12 +55,27 @@ augroup FileTypeSettings
   autocmd BufRead,BufNewFile *.js.erb set filetype=eruby.javascript
   autocmd BufRead,BufNewFile *.css.erb set filetype=eruby.css
   autocmd BufRead,BufNewFile *.scss.erb set filetype=eruby.scss
+
+  autocmd Filetype scala call StartNailgunScalaFmt()
+  autocmd BufWrite *.scala :Autoformat
 augroup END
 
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let ruby_no_expensive = 1
+
+"" scalafmt
+function! StartNailgunScalaFmt()
+  execute(':silent! !scalafmt_ng 2>/dev/null 1>/dev/null &')
+  execute(':redraw!')
+endfunction
+
+let g:formatdef_scalafmt = "'ng scalafmt --stdin --config /Users/toby/dev/besar/app/spark/core/.scalafmt.conf'"
+let g:formatters_scala = ['scalafmt']
+let g:autoformat_autoindent = 0
+let g:autoformat_retab = 0
+let g:autoformat_remove_trailing_spaces = 0
 
 ""Shows current line, forces a redraw, causes .rb to be slow
 ""set cursorline
@@ -73,10 +91,6 @@ set tags=./.tags;
 noremap <F1> :NERDTreeToggle<CR>
 ""Set YcmCompleter Mapping
 nnoremap <F7> :YcmCompleter GoTo<CR>
-
-noremap <F5> :Autoformat<CR>
-let g:formatdef_scalafmt = "'scalafmt --stdin'"
-let g:formatters_scala = ['scalafmt']
 
 nnoremap <C-q> :Tags<CR>
 nnoremap <C-p> :FZF -m<CR>
