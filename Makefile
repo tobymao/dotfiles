@@ -7,3 +7,14 @@ vim:
 
 tmux:
 		brew update && brew install reattach-to-user-namespace
+
+dot: 
+	ln -sf ~/dotfiles/.ctags ~/.ctags &&             \
+ 	ln -sf ~/dotfiles/.git ~/.git &&                 \
+	ln -sf ~/dotfiles/.gitconfig ~/.gitconfig &&     \
+	ln -sf ~/dotfiles/.gitignore ~/.gitignore &&     \
+	ln -sf ~/dotfiles/.profile ~/.profile &&         \
+	ln -sf ~/dotfiles/.tern-config ~/.tern-config && \
+	ln -sf ~/dotfiles/.tmux ~/.tmux &&               \
+	ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf &&     \
+	ln -sf ~/dotfiles/.vimrc ~/.vimrc

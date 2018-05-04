@@ -7,13 +7,13 @@
 [alias]
 	d = difftool
 [diff]
-	tool = gvimdiff 
+	tool = gvimdiff
 [merge]
 	tool = gvimdiff
 [mergetool]
   keepBackup = false
 [user]
-	email = toby.mao@gmail.com
+	email = tmao@netflix.com
 [difftool "gvimdiff"]
 	path = /Applications/MacVim.app/Contents/MacOS/Vim
 [mergetool "gvimdiff"]
