@@ -14,8 +14,7 @@ Plug 'cakebaker/scss-syntax.vim'
 Plug 'tomasr/molokai'
 Plug 'Chiel92/vim-autoformat'
 
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' } | Plug 'junegunn/fzf.vim'
-Plug 'junegunn/fzf.vim'
+Plug '/usr/local/opt/fzf'
 
 call plug#end()            " required
 filetype plugin indent on  " required
@@ -46,7 +45,7 @@ augroup FileTypeSettings
   "" For go, use tabs
   autocmd BufRead,BufNewFile *.go set noexpandtab
   "" For python, use 4 spaces
-  autocmd BufRead,BufNewFile *.py set sw=4 cs=4
+  autocmd BufRead,BufNewFile *.py set sw=4
   "" For pangloss/vim-javascript
   autocmd Bufread,BufNewFile *.js,*.jsx let javascript_enable_domhtmlcss=1
   autocmd Bufread,BufNewFile *.q set filetype=sql
@@ -89,6 +88,10 @@ set tags=./.tags;
 
 ""Set Nerd Tree Toggle Mapping
 noremap <F1> :NERDTreeToggle<CR>
+""For pasting
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
 ""Set YcmCompleter Mapping
 nnoremap <F7> :YcmCompleter GoTo<CR>
 

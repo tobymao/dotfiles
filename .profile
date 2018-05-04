@@ -19,7 +19,12 @@ fbr() {
     git checkout $(echo "$branch" | sed "s/.* //")
 }
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+#eval "$(newt --completion-script-bash)"
+eval "$(pyenv init -)"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
