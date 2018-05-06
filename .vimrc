@@ -8,7 +8,7 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'fatih/vim-go'
 Plug 'derekwyatt/vim-scala'
 Plug 'pangloss/vim-javascript'
-Plug 'cakebaker/scss-syntax.vim'
+Plug 'Vimjas/vim-python-pep8-indent'
 ""You need to create a diversion sudo dpkg-divert --local --divert /usr/bin/node --rename --add /usr/bin/nodejs
 ""Plug 'marijnh/tern_for_vim'
 Plug 'tomasr/molokai'
@@ -27,19 +27,26 @@ syntax on
 ""Highlighting
 set hlsearch
 highlight Search ctermbg=red ctermfg=yellow
+set lazyredraw
 ""Indenting
 set expandtab
 set shiftwidth=2
 set tabstop=2
-
 set ignorecase
 set smartcase
 
 "" Remove Trailing Whitespace on save
-augroup Whitespace
-  autocmd!
-  autocmd BufWritePre * :%s/\s\+$//e
-augroup END
+fun! CleanExtraSpaces()
+	let save_cursor = getpos(".")
+	let old_query = getreg('/')
+	silent! %s/\s\+$//e
+	call setpos('.', save_cursor)
+	call setreg('/', old_query)
+endfun
+
+if has("autocmd")
+	autocmd BufWritePre * :call CleanExtraSpaces()
+endif
 
 augroup FileTypeSettings
   autocmd!
@@ -77,8 +84,6 @@ let g:autoformat_autoindent = 0
 let g:autoformat_retab = 0
 let g:autoformat_remove_trailing_spaces = 0
 
-""Shows current line, forces a redraw, causes .rb to be slow
-""set cursorline
 ""Show commands in command line
 set showcmd
 "" Show path
@@ -109,6 +114,16 @@ runtime macros/matchit.vim
 
 "" tab numbers
 set tabline=%!MyTabLine()
+
+"python with virtualenv support
+py << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+  project_base_dir = os.environ['VIRTUAL_ENV']
+  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+  execfile(activate_this, dict(__file__=activate_this))
+EOF
 
 function MyTabLine()
 	let s = '' " complete tabline goes here
