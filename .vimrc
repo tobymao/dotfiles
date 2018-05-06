@@ -15,6 +15,7 @@ Plug 'tomasr/molokai'
 Plug 'Chiel92/vim-autoformat'
 
 Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 
 call plug#end()            " required
 filetype plugin indent on  " required
@@ -45,7 +46,7 @@ augroup FileTypeSettings
   "" For go, use tabs
   autocmd BufRead,BufNewFile *.go set noexpandtab
   "" For python, use 4 spaces
-  autocmd BufRead,BufNewFile *.py set sw=4
+  autocmd BufRead,BufNewFile *.py set sw=4 ts=4
   "" For pangloss/vim-javascript
   autocmd Bufread,BufNewFile *.js,*.jsx let javascript_enable_domhtmlcss=1
   autocmd Bufread,BufNewFile *.q set filetype=sql
