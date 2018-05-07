@@ -98,10 +98,8 @@ noremap <F1> :NERDTreeToggle<CR>
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
-""Set YcmCompleter Mapping
-nnoremap <F7> :YcmCompleter GoTo<CR>
 
-nnoremap <C-q> :Tags<CR>
+nnoremap <C-h> :Tags<CR>
 nnoremap <C-p> :FZF -m<CR>
 
 "" Set copy and paste
