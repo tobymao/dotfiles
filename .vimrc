@@ -15,6 +15,7 @@ Plug 'tomasr/molokai'
 Plug 'Chiel92/vim-autoformat'
 
 Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 call plug#end()            " required
@@ -112,16 +113,6 @@ runtime macros/matchit.vim
 
 "" tab numbers
 set tabline=%!MyTabLine()
-
-"python with virtualenv support
-py << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-  project_base_dir = os.environ['VIRTUAL_ENV']
-  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-  execfile(activate_this, dict(__file__=activate_this))
-EOF
 
 function MyTabLine()
 	let s = '' " complete tabline goes here
